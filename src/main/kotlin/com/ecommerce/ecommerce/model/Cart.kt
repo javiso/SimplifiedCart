@@ -3,7 +3,7 @@ package com.ecommerce.ecommerce.model
 import com.ecommerce.ecommerce.enumerator.CartState
 import org.hibernate.annotations.GenericGenerator
 import org.hibernate.annotations.Type
-import java.math.BigDecimal
+import java.io.Serializable
 import java.util.*
 import javax.persistence.*
 
@@ -23,4 +23,4 @@ class Cart (
 
     @Enumerated(EnumType.STRING)
     var state : CartState = CartState.PENDING,
-)
+) : Serializable

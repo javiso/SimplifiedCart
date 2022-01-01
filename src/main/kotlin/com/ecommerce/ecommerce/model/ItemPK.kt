@@ -14,7 +14,6 @@ class ItemPK (
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="cart_id", nullable = false)
-    @JsonIgnore
     val cart : Cart,
 
     @ManyToOne

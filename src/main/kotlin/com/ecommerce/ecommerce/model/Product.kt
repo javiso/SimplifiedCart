@@ -3,6 +3,7 @@ package com.ecommerce.ecommerce.model
 import org.hibernate.annotations.GenericGenerator
 import org.hibernate.annotations.Type
 import org.springframework.format.annotation.NumberFormat
+import java.io.Serializable
 import java.math.BigDecimal
 import java.util.*
 import javax.persistence.*
@@ -34,7 +35,8 @@ class Product(
     var price: BigDecimal,
 
     val discount : Boolean
-) {
+
+) : Serializable {
     init {
         if(discount) this.price = this.price.divide(BigDecimal(2))
     }
