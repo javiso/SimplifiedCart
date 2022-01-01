@@ -25,11 +25,11 @@ Body Request Example:
 
 {
 
-    "name":"Cindor",    
-    "description":"chocolatada",
+    "name":"mate",
+    "description":"taragui",
     "sku":"ss3e4r222ad",
-    "price": 20,
-    "discount": true
+    "price": 30,
+    "discount": false
 }
 
 - Delete a product by id: Delete: /ecommerce/v1/product/{idProduct}
