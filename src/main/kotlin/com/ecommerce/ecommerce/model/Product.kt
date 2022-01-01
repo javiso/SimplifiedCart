@@ -34,7 +34,7 @@ class Product(
     @get: NumberFormat(style = NumberFormat.Style.NUMBER)
     var price: BigDecimal,
 
-    val discount : Boolean
+    var discount : Boolean
 
 ) : Serializable {
     init {

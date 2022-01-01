@@ -5,6 +5,7 @@ import com.ecommerce.ecommerce.model.Product
 import com.ecommerce.ecommerce.repository.ProductRepository
 import org.springframework.data.repository.findByIdOrNull
 import org.springframework.stereotype.Service
+import java.math.BigDecimal
 import java.util.*
 
 @Service
@@ -20,9 +21,10 @@ class ProductService(val productRepository : ProductRepository) {
 
         this.findById(idProduct).let { product->
             product.name = productUpdated.name
-            product.price = productUpdated.price
+            product.price = if (productUpdated.discount) productUpdated.price.divide(BigDecimal(2)) else productUpdated.price
             product.sku = productUpdated.sku
             product.description = productUpdated.description
+            product.discount = productUpdated.discount
 
             return productRepository.save(product)
         }
